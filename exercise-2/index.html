@@ -1,0 +1,95 @@
+<!--CMPS3141-HCI - AS3-21S1
+Student Name: Miguel Avila
+Date: Sept.22.21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Shopping List app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css" />
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<link rel="stylesheet" href="shoppinglist.css" />
+</head>
+
+<!-- You could save back to shopping.json, by using an mv-storage like -->
+
+<body mv-app mv-storage="local" class="mv-autoedit" mv-init="shopping.json">
+
+	<div class="shopping-list-grid">
+			
+		<div class="text-heading">
+			<h1>Shopping List App </h1>
+		</div>
+		<div class="card">
+			<div class="card-item">
+				<h3 class="text-heading"> My Stores: </h3>
+
+				<h4>Stores:</h4>
+				<div class="storelist" property="storeUnique" mv-multiple mv-value="unique(store)"></div>
+
+
+				<p>I'm at <input type="text" property="currentStore" placeholder="Enter Store Name">
+				<div class="totalStore"> <span><b>Total Stores:</b> </span> [count(unique(store))]</div>
+			</div>
+
+			<div class=" card-item">
+				<h3 class="text-heading">Frequently bought items</h3>
+				<div property="frequentlyBought" mv-multiple mv-group mv-initial-items="0">
+
+					<table>
+						<thead>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Store</th>
+						</thead>
+						<tbody>
+							<td property="name"></td>
+							<td property="amount"></td>
+							<td property="store" mv-multiple></td>
+							<td><button mv-action="add(frequentlyBought, item)">Add to shopping list</button></td>
+						</tbody>
+					</table>
+
+
+				</div>
+			</div>
+	
+				<div class="card-item">
+					<h3 class="text-heading">Items to buy</h3>
+
+					<div property="item" mv-multiple hidden="[currentStore and !(currentStore in store)]">
+						<table>
+							<thead>
+								<th>Bought</th>
+								<th>Name</th>
+								<th>Amount</th>
+								<th>Store</th>
+							</thead>
+							<tbody>
+								<tr property="items" class="row">
+									<td><input type="checkbox" property="bought"></td>
+									<td property="name" id="item"></td>
+									<td property="amount"></td>
+									<td property="store" mv-multiple></td>
+									<td><button class = "button-item" mv-action="add(items, frequentlyBought)">Add to frequently bought</button></td>
+								</tr>
+								<br>
+							</tbody>
+						</table>
+					</div>
+
+					<button  class = "wipe" mv-action="delete(item)">Clear Completed</button>
+		
+
+					<div class="totalItem"> <span><b>Total Item:</b> </span> [count(item)]</div>
+				</div>
+		
+		</div>
+	</div>
+
+</body>
+
+</html>
