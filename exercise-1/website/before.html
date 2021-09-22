@@ -99,7 +99,32 @@
                 align-items:flex-end
         }
         pre{
-            font-size:20px
+            font-size:30px;
+            color: teal
+        }
+        footer {
+            font-size: 20px;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: teal;
+            color: white;
+            text-align: center;
+        }
+        .footerSpan a{
+            color: white;
+        }
+        .footerSpan a:hover{
+            color: blue;
+            font-weight: bold;
+        }
+        a:hover{
+            color: green;
+            font-weight: bold;
+            text-decoration: none
+        }
+        a{
+            text-decoration: none
         }
     </style>
 </head>
@@ -213,14 +238,14 @@ TEL: +1 (818) 225-2800<br>
                 
                 </div>
     </div>
-   
-    <p>
-        <a href="../../privpolicy.html">Privacy Policy</a><br>
-    </p>
-    <p><a href="mailto:www@vortex.com"><i>www@vortex.com</i></a>
-    </p>
-        <font size="4">Copyright © 2021 Vortex Technology. All Rights Reserved.</font>
-    
+
+    <footer>
+        <span class="footerSpan">
+            <a href="../../privpolicy.html">Privacy Policy</a>
+            <a style="margin-left: 2rem" href="mailto:www@vortex.com">www@vortex.com</a>
+        </span>
+        <div>Copyright © 2021 Vortex Technology. All Rights Reserved.</div>
+    </footer>
 </body>
 
 </html>
