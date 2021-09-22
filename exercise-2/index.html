@@ -20,12 +20,12 @@ Date: Sept.22.21
 
 	<div class="shopping-list-grid">
 			
-		<div class="text-heading">
+		<div class="heading">
 			<h1>Shopping List App </h1>
 		</div>
 		<div class="card">
 			<div class="card-item">
-				<h3 class="text-heading"> My Stores: </h3>
+				<h3 class="heading"> My Stores: </h3>
 
 				<h4>Stores:</h4>
 				<div class="storelist" property="storeUnique" mv-multiple mv-value="unique(store)"></div>
@@ -36,7 +36,7 @@ Date: Sept.22.21
 			</div>
 
 			<div class=" card-item">
-				<h3 class="text-heading">Frequently bought items</h3>
+				<h3 class="heading">Frequently bought items</h3>
 				<div property="frequentlyBought" mv-multiple mv-group mv-initial-items="0">
 
 					<table>
@@ -56,40 +56,38 @@ Date: Sept.22.21
 
 				</div>
 			</div>
-	
-				<div class="card-item">
-					<h3 class="text-heading">Items to buy</h3>
+		</div>
 
-					<div property="item" mv-multiple hidden="[currentStore and !(currentStore in store)]">
-						<table>
-							<thead>
-								<th>Bought</th>
-								<th>Name</th>
-								<th>Amount</th>
-								<th>Store</th>
-							</thead>
-							<tbody>
-								<tr property="items" class="row">
-									<td><input type="checkbox" property="bought"></td>
-									<td property="name" id="item"></td>
-									<td property="amount"></td>
-									<td property="store" mv-multiple></td>
-									<td><button class = "button-item" mv-action="add(items, frequentlyBought)">Add to frequently bought</button></td>
-								</tr>
-								<br>
-							</tbody>
-						</table>
-					</div>
+		<div class="card">
+			<div class="card-item">
+				<h3 class="heading">Items to buy</h3>
 
-					<button  class = "wipe" mv-action="delete(item)">Clear Completed</button>
-		
+				<div property="item" mv-multiple hidden="[currentStore and !(currentStore in store)]">
+					<table>
+						<thead>
+							<th>Bought</th>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Store</th>
+						</thead>
+						<tbody>
+							<tr property="items" class="row">
+								<td><input type="checkbox" property="bought"></td>
+								<td property="name" id="item"></td>
+								<td property="amount"></td>
+								<td property="store" mv-multiple></td>
+							<br>
+							<br>
+								<td><button mv-action="add(items, frequentlyBought)">Add to frequently bought</button></td>
+							</tr>
+						</tbody>
+					</table>
 
-					<div class="totalItem"> <span><b>Total Item:</b> </span> [count(item)]</div>
+				</div>
+
+				<button class="clear-completed" mv-action="delete(item)">Clear Completed</button>
+				<div class="totalItem"> <span><b>Total Item:</b> </span> [count(item)]</div>
+			</div>
+
 				</div>
 		
-		</div>
-	</div>
-
-</body>
-
-</html>
