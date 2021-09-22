@@ -7,9 +7,6 @@ body {
   background: linear-gradient(to right, #6ef0e3, #a95ecc);
 }
 
-body > div {
-  border: 1px solid;
-}
 .shopping-list-grid {
   display: grid;
   justify-content: center;
@@ -71,10 +68,7 @@ button:hover {
   color: white;
 }
 
-.totalStore {
-  float: right;
-  color: rgb(7, 112, 112);
-}
+.totalStore,
 .totalItem {
   float: right;
   color: rgb(7, 112, 112);
