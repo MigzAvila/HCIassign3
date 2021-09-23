@@ -23,8 +23,9 @@ body {
   border: 1px dotted darkgoldenrod;
 }
 
-.text-heading {
-  text-align: center;
+.text-heading,
+.heading {
+  text-align: center !important;
   color: #514c4a;
 }
 
@@ -41,7 +42,7 @@ body {
 .card {
   padding: 0.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
 }
 
